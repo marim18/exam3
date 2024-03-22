@@ -1,5 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿// See https://aka.ms/new-console-template for more informatio
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 double SquarifyNumber(double Number)
 {
@@ -43,24 +45,17 @@ string GreetingsSir(string Name)
     return GreetingName;
 }
 /*------------task2--------------------*/
-string ArrayFlattener( List<int> Objects)
+string ArrayFlattener(  int[] jsonArray)
 { string FlattArray = "";
-    int Lenght = Objects.Count;
+    int Lenght = jsonArray.Length;
     for (int i = 0; i < Lenght; i++)
     {
-        FlattArray += Objects[i];
+        FlattArray += jsonArray[i];
     }
     return FlattArray;
 }
 
- List<int> lines = new List<int>();
- using (StreamReader reader = new StreamReader("arrays.json"))
-        {
-           int line;
-            while ((line = int.Parse(reader.ReadLine())) != null)
-            {
-                lines.Add(line);
-            }
-        }
-   Console.WriteLine($"{ArrayFlattener(lines)}");
-    
+            int line = 0;
+           string Temp  ="";
+            int[] jsonArray = JsonSerializer.Deserialize<int[]>(File.ReadAllText("arrays.json").Trim());
+   Console.WriteLine($"{ArrayFlattener(jsonArray)}");
