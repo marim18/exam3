@@ -33,22 +33,34 @@ double CubeifyNumber(double Number)
 }
 double CalculateRadiusOfACircle(double Radius)
 {
-    double pi = 3.14159;
+    double Pi = 3.14159;
     double NoMagicTwo = 2;
-    return NoMagicTwo * pi * Radius;
+    return NoMagicTwo * Pi * Radius;
 }
 string GreetingsSir(string Name)
 {
     string GreetingName = $"Hello there {Name} Fancy seeing you here";
     return GreetingName;
 }
-
-string ArrayFlattener(int[] objects)
+/*------------task2--------------------*/
+string ArrayFlattener( List<int> Objects)
 { string FlattArray = "";
-    int Lenght = objects.Length;
+    int Lenght = Objects.Count;
     for (int i = 0; i < Lenght; i++)
     {
-        FlattArray += objects[i];
+        FlattArray += Objects[i];
     }
     return FlattArray;
 }
+
+ List<int> lines = new List<int>();
+ using (StreamReader reader = new StreamReader("arrays.json"))
+        {
+           int line;
+            while ((line = int.Parse(reader.ReadLine())) != null)
+            {
+                lines.Add(line);
+            }
+        }
+   Console.WriteLine($"{ArrayFlattener(lines)}");
+    
