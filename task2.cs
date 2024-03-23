@@ -1,8 +1,14 @@
 /*------------task2--------------------*/
-using System.Security.AccessControl;
-using Microsoft.VisualBasic;
+using System.Text.Json;
 namespace Exam3{
 class task2{
+    public List<ArrayObject> ListOfArrays = new List<ArrayObject>();
+    public void reader()
+    {
+    string FileJson = File.ReadAllText("arrays.json");
+    ArrayObject a = JsonSerializer.Deserialize<ArrayObject>(FileJson);
+    ListOfArrays.Add(a);
+    }
 public int[] ArrayFlattener( int[] jsonArray) //json reader is missing
 { int [] FlattArray;
     int Lenght = jsonArray.Length;
@@ -15,6 +21,10 @@ public int[] ArrayFlattener( int[] jsonArray) //json reader is missing
 
     return FlattArray;
 } } }
+class ArrayObject{
+    int[] InnsideArrays {get;set;}
+
+}
 
 
 /*
