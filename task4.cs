@@ -7,7 +7,6 @@ namespace Exam3
 
         public void reader() //redundant refractor at the end ot one function for all if oyu have time
         {
-
             string BookString = File.ReadAllText("books.json");
             books book = JsonSerializer.Deserialize<books>(BookString);
             BookList.Add(book);
@@ -21,9 +20,13 @@ namespace Exam3
             return BooksWithKeyword;
         }
 
-        String ReturnBookByAuthorContainsLetter(char Keyletter = 't')
-        {
-
+        List<books> ReturnBookByAuthorContainsLetter(char Keyletter = 't')
+        {    List<books> BooksWithKeyword = new List<books>();
+            foreach(books book in BookList){
+                if( book.author.ToLower().Contains(Keyletter)){
+                BooksWithKeyword.Add(book);} 
+            }
+             return BooksWithKeyword;
         }
         int NumberOfBooksAfterYear(int Year = 1992)
         {
