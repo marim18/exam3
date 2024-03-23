@@ -15,7 +15,9 @@ namespace Exam3
             Console.WriteLine("programstart");
             Console.WriteLine("Task1");
             task1runner();
-            
+            Console.WriteLine("task2");
+            task2 task2 = new task2();
+            Console.WriteLine($"{task2.ArrayFlattener()}");
             Console.WriteLine("task3");
             task3 task3 = new task3();
             task3.reader();
@@ -23,15 +25,11 @@ namespace Exam3
             Console.WriteLine("task4");
             task4 task4 = new task4();
             task4.runTask4();
-            /*
-            Console.WriteLine("task2");
-            task2 task2 = new task2();
-           ArrayObject idkanymore = task2.reader();
-            Console.WriteLine($"{task2.ArrayFlattener(idkanymore.InnsideArrays)}");*/
 
         }
-        public static void task1runner(){
-        Console.WriteLine($"{SquarifyNumber(10)} \n {ConvertInchToMm(10)} \n {RootifyNumber(10)} \n {CubeifyNumber(10)} \n {CalculateRadiusOfACircle(10)} \n {GreetingsSir("Christian")} ");
+        public static void task1runner()
+        {
+            Console.WriteLine($"{SquarifyNumber(10)} \n {ConvertInchToMm(10)} \n {RootifyNumber(10)} \n {CubeifyNumber(10)} \n {CalculateRadiusOfACircle(10)} \n {GreetingsSir("Christian")} ");
         }
         public static double SquarifyNumber(double Number)
         {
@@ -53,7 +51,8 @@ namespace Exam3
                 {
                     return i;
                 }
-                else{
+                else
+                {
                     return Math.Sqrt(Number);
                 }
 
@@ -77,6 +76,6 @@ namespace Exam3
             string GreetingName = $"Hello there {Name} Fancy seeing you here";
             return GreetingName;
         }
-        
+
     }
 }

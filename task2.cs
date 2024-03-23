@@ -1,34 +1,55 @@
 /*------------task2--------------------*/
 using System.Text.Json;
-namespace Exam3{
-public class task2{
-     List<ArrayObject> ListOfArrays = new List<ArrayObject>();
-    public ArrayObject reader() //need this to make an array to put in arrayflattener when my brain recovers
+namespace Exam3
+{
+    public class task2
     {
-    string FileJson = File.ReadAllText("arrays.json");
-    ArrayObject a = JsonSerializer.Deserialize<ArrayObject>(FileJson);
-    ListOfArrays.Add(a);
-    return a;
-    }
-public int[] ArrayFlattener( int[] jsonArray) 
-{ int [] FlattArray;
-    int Lenght = jsonArray.Length;
-    int count = 0;
-    List<int> ListTemporary = new List<int>();
-   foreach (int i in jsonArray){
-    ListTemporary.Add(i);
-   }
-   FlattArray = ListTemporary.ToArray();
+        List<ArrayObject> ListOfArrays = new List<ArrayObject>();
+        public void reader()
+        {
+            try
+            {
+                string fileJson = File.ReadAllText("arrays.json");
 
-    return FlattArray;
-} } }
-public class ArrayObject{
- public  int[] InnsideArrays {get;set;}
+                ArrayObject arrayObject = JsonSerializer.Deserialize<ArrayObject>(fileJson);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error reading JSON file: " + ex.Message);
+            }
+        }
+        public int[] ArrayFlattener()
+        {
+            int[] FlattArray;
+            
+            int count = 0; 
+            List<int> ListTemporary = new List<int>();
+            foreach (ArrayObject jsonArray in ListOfArrays)
+            {
+                int Lenght = jsonArray.InnsideArrays.Length;
+               
+
+                foreach (int i in jsonArray.InnsideArrays)
+                {
+                    ListTemporary.Add(i);
+                }
+              
+            }  FlattArray = ListTemporary.ToArray();
+
+            return FlattArray;
+        }
+    }
+}
+public class ArrayObject
+{
+     public List<object> Data { get; set; }
+    public int[] InnsideArrays { get; set; }
 
 }
 
 
-/*
+/* Left it here to document i tried
 
             int line = 0;
            string Temp  ="";
