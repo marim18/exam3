@@ -1,5 +1,9 @@
 /*------------task2--------------------*/
-int[] ArrayFlattener( int[] jsonArray) //does at present not answer task
+using System.Security.AccessControl;
+using Microsoft.VisualBasic;
+namespace Exam3{
+class task2{
+public int[] ArrayFlattener( int[] jsonArray) //json reader is missing
 { int [] FlattArray;
     int Lenght = jsonArray.Length;
     int count = 0;
@@ -8,8 +12,11 @@ int[] ArrayFlattener( int[] jsonArray) //does at present not answer task
     ListTemporary.Add(i);
    }
    FlattArray = ListTemporary.ToArray();
+
     return FlattArray;
-}
+} } }
+
+
 /*
 
             int line = 0;
