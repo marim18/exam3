@@ -1,7 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more informatio
+using System.Data.Common;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
 
 double SquarifyNumber(double Number)
 {
@@ -44,8 +46,8 @@ string GreetingsSir(string Name)
     string GreetingName = $"Hello there {Name} Fancy seeing you here";
     return GreetingName;
 }
-/*------------task2--------------------*/
-string ArrayFlattener(  int[] jsonArray)
+/*------------task2--------------------
+string ArrayFlattener(  int[] jsonArray) //does at present not answer task
 { string FlattArray = "";
     int Lenght = jsonArray.Length;
     for (int i = 0; i < Lenght; i++)
@@ -57,5 +59,33 @@ string ArrayFlattener(  int[] jsonArray)
 
             int line = 0;
            string Temp  ="";
-            int[] jsonArray = JsonSerializer.Deserialize<int[]>(File.ReadAllText("arrays.json").Trim());
+            var arrays = JsonSerializer.Deserialize<int[]>(File.ReadAllText("arrays.json").Trim());
    Console.WriteLine($"{ArrayFlattener(jsonArray)}");
+
+
+class array1{
+    foreach array in arrays{
+    int[] jsonArray = array.Jsonar}
+}
+
+ using (StreamReader reader = new StreamReader("../exam3/arrays.json"))
+        {
+           int line;
+            while ((line = int.Parse(reader.ReadLine())) != null)
+            {
+                lines.Add(line);
+            }
+            
+
+        }
+*/
+ //var fileContent = JsonSerializer.Deserialize<int[]>(File.steamreade("arrays.json"));
+ List<int> lines = new List<int>();
+  using (StreamReader reader = new StreamReader("arrays.json"))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+            }
+        }
+        Console.WriteLine($"{lines}");
