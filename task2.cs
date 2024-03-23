@@ -3,13 +3,13 @@ using System.Text.Json;
 namespace Exam3{
 class task2{
     public List<ArrayObject> ListOfArrays = new List<ArrayObject>();
-    public void reader()
+    public void reader() //need this to make an array to put in arrayflattener when my brain recovers
     {
     string FileJson = File.ReadAllText("arrays.json");
     ArrayObject a = JsonSerializer.Deserialize<ArrayObject>(FileJson);
     ListOfArrays.Add(a);
     }
-public int[] ArrayFlattener( int[] jsonArray) //json reader is missing
+public int[] ArrayFlattener( int[] jsonArray) 
 { int [] FlattArray;
     int Lenght = jsonArray.Length;
     int count = 0;

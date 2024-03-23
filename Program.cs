@@ -21,6 +21,10 @@ namespace Exam3
             task3 task3 = new task3();
             task3.reader();
             task3.SummarizeFunction();
+            Console.WriteLine("task4");
+            task4 task4 = new task4();
+            task4.runTask4();
+
 
 
         }

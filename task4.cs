@@ -1,7 +1,7 @@
 using System.Text.Json;
 namespace Exam3
 {
-    class task4
+   public class task4
     {
         public List<Books> BookList = new List<Books>();
 
@@ -54,7 +54,7 @@ namespace Exam3
             }
             return ISBNS;
         }
-          void ListBooksAlphabeticallyy(bool Ascending = true)
+         List<Books> ListBooksAlphabeticallyy(bool Ascending = true)
         {
             if(Ascending){
 
@@ -95,7 +95,7 @@ namespace Exam3
 
         }
       
-        void ListBooksGroupedAuthorLastName()
+        List<Books>ListBooksGroupedAuthorLastName()
         {
             foreach( Books book in BookList){
                 
@@ -107,8 +107,14 @@ namespace Exam3
             }
 
         }
-        void ListBooksGroupedAuthorFirstName()
+        List<Books> ListBooksGroupedAuthorFirstName()
         {
+        }
+        public void runTask4(){
+            reader();
+            Console.WriteLine($"return book by keyword \n{ReturnBookByKeyword()} \n return book by author contains letter \n{ReturnBookByAuthorContainsLetter()}")
+            Console.WriteLine($" return book by year \n {NumberOfBooksAfterYear()}\n return book before year \n{NumberOfBooksBeforeYear()}")
+            Console.WriteLine($"isbn author default value = christian \n {ISBNAuthorReturn("Christian")} list books alphabetically \n  {ListBooksAlphabeticallyy()} list books chronologically \n {ListBooksChronologicaly()} grouped by author first name \n {ListBooksGroupedAuthorFirstName()} grouped by lastname \n{ListBooksGroupedAuthorLastName()}")
         }
 
     }
