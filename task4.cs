@@ -46,9 +46,13 @@ namespace Exam3
              return BooksWithKeyword.Count;
 
         }
-        string ISBNAuthorReturn()
-        {
-
+        List<string> ISBNAuthorReturn(string authorName)
+        {   List<string> ISBNS = new List<string>();
+            foreach(books book in BookList){
+                if( book.author == authorName){
+                ISBNS.Add(book.isbn);} 
+            }
+            return ISBNS;
         }
         void ListBooksAlphabetically(bool Ascending = true)
         {
