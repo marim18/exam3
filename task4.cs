@@ -29,11 +29,21 @@ namespace Exam3
              return BooksWithKeyword;
         }
         int NumberOfBooksAfterYear(int Year = 1992)
-        {
+        {List<books> BooksWithKeyword = new List<books>();
+            foreach(books book in BookList){
+                if( book.publication_year > Year){
+                BooksWithKeyword.Add(book);} 
+            }
+             return BooksWithKeyword.Count;
 
         }
         int NumberOfBooksBeforeYear(int Year = 2004)
-        {
+        {List<books> BooksWithKeyword = new List<books>();
+            foreach(books book in BookList){
+                if( book.publication_year < Year){
+                BooksWithKeyword.Add(book);} 
+            }
+             return BooksWithKeyword.Count;
 
         }
         string ISBNAuthorReturn()
