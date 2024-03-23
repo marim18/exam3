@@ -16,7 +16,9 @@ namespace Exam3
             Console.WriteLine("Task1");
             task1runner();
             Console.WriteLine("task2");
-            Console.WriteLine($"{task2.ArrayFlattener()}");
+            task2 task2 = new task2();
+           ArrayObject idkanymore = task2.reader();
+            Console.WriteLine($"{task2.ArrayFlattener(idkanymore.InnsideArrays)}");
             Console.WriteLine("task3");
             task3 task3 = new task3();
             task3.reader();

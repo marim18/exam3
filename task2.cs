@@ -1,13 +1,14 @@
 /*------------task2--------------------*/
 using System.Text.Json;
 namespace Exam3{
-class task2{
-    public List<ArrayObject> ListOfArrays = new List<ArrayObject>();
-    public void reader() //need this to make an array to put in arrayflattener when my brain recovers
+public class task2{
+     List<ArrayObject> ListOfArrays = new List<ArrayObject>();
+    public ArrayObject reader() //need this to make an array to put in arrayflattener when my brain recovers
     {
     string FileJson = File.ReadAllText("arrays.json");
     ArrayObject a = JsonSerializer.Deserialize<ArrayObject>(FileJson);
     ListOfArrays.Add(a);
+    return a;
     }
 public int[] ArrayFlattener( int[] jsonArray) 
 { int [] FlattArray;
@@ -21,8 +22,8 @@ public int[] ArrayFlattener( int[] jsonArray)
 
     return FlattArray;
 } } }
-class ArrayObject{
-    int[] InnsideArrays {get;set;}
+public class ArrayObject{
+ public  int[] InnsideArrays {get;set;}
 
 }
 
