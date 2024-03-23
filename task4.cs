@@ -189,9 +189,6 @@ namespace Exam3
                 if( book.authordictionary["LastName"] == startingname){
                     GroupedBooks.Add(book);
                 }
-                else if( BookGroupsGrouped.Contains(book.authordictionary[])){
-                    //my head started spinning so this is a potential error in my code. 
-                }
                 else{
                      startingname = book.authordictionary["LastName"];
                     BookGroupsGrouped.Add(GroupedBooks.ToArray());

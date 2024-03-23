@@ -15,10 +15,7 @@ namespace Exam3
             Console.WriteLine("programstart");
             Console.WriteLine("Task1");
             task1runner();
-            Console.WriteLine("task2");
-            task2 task2 = new task2();
-           ArrayObject idkanymore = task2.reader();
-            Console.WriteLine($"{task2.ArrayFlattener(idkanymore.InnsideArrays)}");
+            
             Console.WriteLine("task3");
             task3 task3 = new task3();
             task3.reader();
@@ -26,8 +23,11 @@ namespace Exam3
             Console.WriteLine("task4");
             task4 task4 = new task4();
             task4.runTask4();
-
-
+            /*
+            Console.WriteLine("task2");
+            task2 task2 = new task2();
+           ArrayObject idkanymore = task2.reader();
+            Console.WriteLine($"{task2.ArrayFlattener(idkanymore.InnsideArrays)}");*/
 
         }
         public static void task1runner(){
@@ -35,8 +35,8 @@ namespace Exam3
         }
         public static double SquarifyNumber(double Number)
         {
-
-            return Number * Number;
+            double answer = Number * Number;
+            return answer;
         }
 
         public static double ConvertInchToMm(double Inches)
@@ -45,13 +45,16 @@ namespace Exam3
             return Inches * ConvertionConstant;
         }
 
-        public static int RootifyNumber(int Number)
+        public static double RootifyNumber(double Number)
         {
             for (int i = 0; i < Number; i++)
             {
                 if (i * i == Number)
                 {
                     return i;
+                }
+                else{
+                    return Math.Sqrt(Number);
                 }
 
             }
